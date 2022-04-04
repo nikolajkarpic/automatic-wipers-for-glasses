@@ -1,7 +1,8 @@
 #include <Servo.h> // Servo libary is used to control servo motors that are used as wipers.
 
-#define SERVO_PIN 9             // Arduino pin for servo
-#define RAIN_SENSOR_PIN A0      // Arduino pin for rain sensor
+#define SERVO_PIN 9        // Arduino pin for servo
+#define RAIN_SENSOR_PIN A0 // Arduino pin for rain sensor
+
 #define RAIN_MAX 1023           // Rain sensor max value
 #define RAIN_MIN 0              // Rain sensor min value
 #define SERVO_START_POSITION 90 // Starting position for servos
