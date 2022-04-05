@@ -45,8 +45,6 @@ void setup()
 void loop()
 {
 
-  delay(3000);
-
   sensorValue = analogRead(A0);
   Serial.println(sensorValue);
   if (sensorValue > NO_RAIN_MARGIN) // No rain
