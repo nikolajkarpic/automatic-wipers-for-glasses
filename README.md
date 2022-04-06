@@ -50,11 +50,13 @@ The sowftware needed to compile and upload the code can be found on this [link](
   
 Define pins used to connect to arduino in automaticWipersForGlasses.ino file.
   
-  `SERVO_PIN `
+  `SERVO_RIGHT_PIN`
+  
+  `SERVO_LEFT_PIN`
   
   `RAIN_SENSOR_PIN `
   
-Wire the sensor to `RAIN_SENSOR_PIN` and both servo motors to `SERVO_PIN` then wire up power suply. Push code to the Arduino board.
+Wire the sensor to `RAIN_SENSOR_PIN` and first servo to `SERVO_RIGHT_PIN` and the second to `SERVO_LEFT_PIN`  then wire up power suply. Push code to the Arduino board.
   
 Code is hihgly modular, and it can be modified with ease by changing the couple of constants at the beggingin of the file. 
   
@@ -70,9 +72,13 @@ Sensor can be calibrated with these constants:
   
   `SERVO_WIPE_SPEED`
   
-  `SERVO_START_POSITION`
+  `SERVO_LEFT_START_POSITION`
   
-  `SERVO_STOP_POSITION`
+  `SERVO_LEFT_STOP_POSITION`
+  
+  `SERVO_RIGHT_START_POSITION`
+  
+  `SERVO_RIGHT_STOP_POSITION`
   
   `HEAVY_RAIN_DELAY`
   
@@ -81,6 +87,8 @@ Sensor can be calibrated with these constants:
   `LOW_RAIN_DELAY`
   
   `NO_RAIN_DELAY`
+  
+  Baud rate is set with `BAUD_RATE`, serial communication is used for debbuging purposes mostly. As of now it shows wether its HEAVY, MEDIUM, LOW or NO rain fall.
   
   
   
