@@ -6,10 +6,10 @@
 
 #define RAIN_MAX 1023                  // Rain sensor max value
 #define RAIN_MIN 0                     // Rain sensor min value
-#define SERVO_LEFT_START_POSITION 90   // Starting position for servos
-#define SERVO_LEFT_STOP_POSITION 180   // End position for servos
-#define SERVO_RIGHT_START_POSITION 180 // Starting position for servos
-#define SERVO_RIGHT_STOP_POSITION 90   // End position for servos
+#define SERVO_LEFT_START_POSITION 110  // Starting position for servos
+#define SERVO_LEFT_STOP_POSITION 165   // End position for servos
+#define SERVO_RIGHT_START_POSITION 170 // Starting position for servos
+#define SERVO_RIGHT_STOP_POSITION 105  // End position for servos
 #define SERVO_WIPE_SPEED 5             // Delay speed for swiping
 #define HEAVY_RAIN_MARGIN 300          // Rain sensor margins
 #define MEDIUM_RAIN_MARGIN 500
@@ -28,8 +28,8 @@ int sensorValue = 0; // initialising variable to store analouge value of rain se
 // int servoPositionRight = SERVO_START_POSITION; // intialising variable to store value of servos position
 // (servo can move from 0 degres to 180 degres, more accuratly sg90 can move from -90 to 90 degres)
 
-int servoPositionRight = 180;
-int servoPositionLeft = 90;
+int servoPositionRight = SERVO_RIGHT_START_POSITION;
+int servoPositionLeft = SERVO_LEFT_START_POSITION;
 
 void setup()
 {
@@ -44,7 +44,6 @@ void setup()
 
 void loop()
 {
-
   sensorValue = analogRead(A0);
   Serial.println(sensorValue);
   if (sensorValue > NO_RAIN_MARGIN) // No rain
