@@ -9,7 +9,7 @@
 #define SERVO_LEFT_START_POSITION 110  // Starting position for servos
 #define SERVO_LEFT_STOP_POSITION 165   // End position for servos
 #define SERVO_RIGHT_START_POSITION 170 // Starting position for servos
-#define SERVO_RIGHT_STOP_POSITION 105  // End position for servos
+#define SERVO_RIGHT_STOP_POSITION 115  // End position for servos
 #define SERVO_WIPE_SPEED 5             // Delay speed for swiping
 #define HEAVY_RAIN_MARGIN 300          // Rain sensor margins
 #define MEDIUM_RAIN_MARGIN 500
@@ -17,8 +17,8 @@
 
 #define BAUD_RATE 9600 // Baud rate for serial communication
 
-#define HEAVY_RAIN_DELAY 300  // Delay values in ms
-#define MEDIUM_RAIN_DELAY 100 // Delay values in ms
+#define HEAVY_RAIN_DELAY 100  // Delay values in ms
+#define MEDIUM_RAIN_DELAY 750 // Delay values in ms
 #define LOW_RAIN_DELAY 2000   // Delay values in ms
 #define NO_RAIN_DELAY 2000    // Delay values in ms
 
@@ -49,14 +49,14 @@ void loop()
   if (sensorValue > NO_RAIN_MARGIN) // No rain
   {
     Serial.println("No rain!");
-    ServoRight.write(servoPositionRight);
-    ServoLeft.write(servoPositionLeft);
+    ServoRight.write(SERVO_RIGHT_START_POSITION);
+    ServoLeft.write(SERVO_LEFT_START_POSITION);
     delay(NO_RAIN_DELAY);
   }
   if (sensorValue <= NO_RAIN_MARGIN && sensorValue > MEDIUM_RAIN_MARGIN) // Low rain fall
   {
     Serial.println("Low rain fall!");
-    for (servoPositionRight = SERVO_RIGHT_START_POSITION, servoPositionLeft = SERVO_LEFT_START_POSITION; servoPositionRight > SERVO_RIGHT_STOP_POSITION && servoPositionLeft < SERVO_LEFT_STOP_POSITION; servoPositionRight--, servoPositionLeft++)
+    for (servoPositionRight = SERVO_RIGHT_START_POSITION, servoPositionLeft = SERVO_LEFT_START_POSITION; servoPositionRight > SERVO_RIGHT_STOP_POSITION && servoPositionLeft < SERVO_LEFT_STOP_POSITION;  servoPositionRight--, servoPositionLeft++)
     {
       ServoRight.write(servoPositionRight);
       ServoLeft.write(servoPositionLeft);
